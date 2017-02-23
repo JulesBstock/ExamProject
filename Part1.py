@@ -15,7 +15,7 @@ class Stbond(object):
         self.interst = interest
         return amount * 0.01 * 100
 
-print(Stbond.stbond_return(1000))
+
 
 
 
