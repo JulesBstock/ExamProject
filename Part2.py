@@ -1,12 +1,18 @@
+import os
+import glob
 import pandas as pd
 import numpy as np
-import os
 
-outpath = os.path.abspath('./Results/export.csv')
-print(outpath)
+path = "C:/Users/jules/Documents/M2/Python/ExamProject/Data"
+allfiles = glob.glob(os.path.join(path,"*.csv"))
 
-if not os.path.exists(os.path.abspath('./Results')):
-    os.makedirs('./Results')
 
-df1 = pd.read_csv(outpath, intex_label=False)
-print(df1)
+np_array_list = []
+for file in allfiles:
+    df = pd.read_csv(file, index_col=None)
+    np_array_list.append(df.as_matrix())
+
+comb_np_array = np.vstack(np_array_list)
+big_frame = pd.DataFrame(comb_np_array)
+
+print(big_frame)
