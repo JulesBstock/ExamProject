@@ -79,4 +79,6 @@ x9 = XOM['High'].plot(label='XOM')
 x10 = YHOO['High'].plot(label='YHOO')
 
 x1.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+plt.grid(True)
 plt.show()
+

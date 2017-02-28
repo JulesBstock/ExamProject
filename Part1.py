@@ -27,6 +27,7 @@ for i in range(99):
 x, = plt.plot(ListSt)
 y, = plt.plot(ListLt)
 plt.legend([x, y], ['ST Bonds', 'LT Bonds'])
+plt.grid(True)
 plt.show()
 
 
